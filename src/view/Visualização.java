@@ -6,6 +6,7 @@ import control.Controle;
 public class Visualização {	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+                Controle con = new Controle();
 		boolean loop = true;
 		while (loop == true) {
 			System.out.println("======LISTA DE TAREFAS======");
@@ -17,33 +18,23 @@ public class Visualização {
 			int escolha = sc.nextInt();
 			
 			switch (escolha) {
-			case 1: {
-				Controle con = new Controle();
+			case 1 ->  {
 				con.adicionarTarefa();
-				break;
 			}
-			case 2: {
-				Controle con = new Controle();
+			case 2 ->  {
 				con.editarTarefa();
-				break;
 			}
-			case 3: {
-				Controle con = new Controle();
+			case 3 ->  {
 				con.listarTarefa();
-				break;
 			}
-			case 4: {
-				Controle con = new Controle();
+			case 4 ->  {
 				con.excluirTarefa();
-				break;
 			}
-			case 5: {
+			case 5 ->  {
 				System.out.println("SAIR");
 				loop = false;
-				break;
 			}
-			default:
-				System.out.println("Opção inválida");
+			default -> System.out.println("Opção inválida");
 			}
 		}
 		

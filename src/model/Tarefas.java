@@ -1,11 +1,9 @@
 package model;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Objects;
 
 public class Tarefas {
-    private Long id;
+    private int id;
     private String titulo;
     private String descrição;
     private boolean completa;
@@ -24,15 +22,58 @@ public class Tarefas {
     }
 
     //Construtor com descrição;
-    public Tarefas(String titulo, String desc){
+    public Tarefas(String titulo, String desc, int ID){
         this(titulo);
         this.descrição = desc;
+        this.id = ID;
     }
 
     //Construtor completo
-    public Tarefas(Long id, String titulo, String desc, boolean completa){
-        this(titulo, desc);
-        this.id = id;
+    public Tarefas(String titulo, String desc,int ID, boolean completa){
+        this(titulo, desc, ID);
         this.completa = completa;
-    }
+    }  
+    
+    //Getters e setters
+
+	public int getId() {
+		return id;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public String getDescrição() {
+		return descrição;
+	}
+
+	public void setDescrição(String descrição) {
+		this.descrição = descrição;
+	}
+
+	public boolean isCompleta() {
+		return completa;
+	}
+
+	public void setCompleta(boolean completa) {
+		this.completa = completa;
+	}
+
+	public LocalDateTime getDataAgora() {
+		return dataAgora;
+	}
+
+	public void setDataAgora(LocalDateTime dataAgora) {
+		this.dataAgora = dataAgora;
+	}
+	
+	public String toString() {
+	    return "Tarefa{id=" + id + ", titulo='" + titulo + "', descricao='" + descrição + "', completa=" + completa + ", data=" + dataAgora + "}";
+	}
+	
 }
