@@ -32,11 +32,23 @@ public class Controle {
 	}
 	
 	public void listarTarefa() {
-		System.out.println("LISTAR TAREFA");
+		System.out.println("\nLISTAR TAREFAS");
+		
+		if (Lista.isEmpty()) System.out.println("Nenhuma tarefa registrada!\n");
+		else {
+			Iterator<Tarefas> listar = Lista.iterator();
+			while (listar.hasNext()){
+				Tarefas tarefa = listar.next();
+				System.out.println("======================");
+				System.out.println("ID: " + tarefa.getId());
+				System.out.println("Título: " + tarefa.getTitulo());
+				System.out.println("Descrição: " + tarefa.getDescrição());
+				System.out.println("======================\n");
+			}
+		}
 	}
-	
+
 	public void excluirTarefa() {
 		System.out.println("EXCLUIR TAREFA");
 	}
-	
 }
